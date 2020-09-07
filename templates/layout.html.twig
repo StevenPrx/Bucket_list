@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bucket-List{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <a class="site-title" href="{{ path('home') }}" title="Bucket-List | Home">
+            <img src="{{ asset('img/logo.png') }}" alt="Bucket-List"> Bucket-List
+        </a>
+        <nav class="navbar navbar-expand-lg">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ path("home") }}" title="Bucket-List | Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path("about_us") }}" title="Bucket-List | About Us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path("idea_list") }}" title="Bucket-List | Ideas">Ideas list</a></li>
+                    {% if app.user %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path("idea_add") }}" title="Bucket-List | Add an Idea">Add an Idea</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    {% if app.user %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path("app_logout") }}" title="Bucket-List | Log Out">Log Out</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path("app_login") }}" title="Bucket-List | Log In">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path("app_register") }}" title="Bucket-List | Register">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; {{ "now"|date("Y") }} Bucket-List
+    </footer>
+</div>
+</body>
+</html>

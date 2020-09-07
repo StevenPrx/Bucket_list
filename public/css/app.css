@@ -1,0 +1,84 @@
+/**
+global styles
+ */
+body {
+    margin: 0 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.container {
+    min-width: 360px !important;
+    max-width: 1000px !important;
+    margin: auto !important;
+    padding: 10px 20px !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+/**
+header
+ */
+.site-title {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 48px !important;
+}
+
+.site-title img {
+    height: 48px !important;
+    display: block !important;
+    margin-right: 5px !important;
+}
+
+header nav ul {
+    margin: 5px 0 !important;
+    display: flex !important;
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+header nav a {
+    display: block !important;
+    padding: 5px 8px !important;
+    margin-right: 10px !important;
+}
+
+/**
+main
+ */
+main {
+    padding: 30px 0 !important;
+    border-top: 1px solid #D3D3D3 !important;
+    border-bottom: 1px solid #D3D3D3 !important;
+}
+
+h1 {
+    margin: 0 !important;
+}
+
+/**
+footer
+ */
+footer {
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+.btn-custom{
+    background-color: #4d4d4d !important;
+    border-color: #4d4d4d !important;
+}
+
+.author-widget{
+    width: 30% !important;
+}
+.categList{
+    width: auto !important;
+}
